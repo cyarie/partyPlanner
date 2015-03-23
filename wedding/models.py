@@ -9,6 +9,7 @@ class People(models.Model):
     city = models.CharField(max_length=255)
     state = models.CharField(max_length=45)
     zip_code = models.SmallIntegerField(max_length=5)
+    email = models.CharField(max_length=255)
     comment = models.TextField()
 
     def __unicode__(self):
