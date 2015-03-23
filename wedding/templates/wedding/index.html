@@ -5,6 +5,14 @@
     <title></title>
 </head>
 <body>
-
+    {% if last_five_people %}
+        <ul>
+            {% for person in last_five_people %}
+                <li>{{ person.name }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No people are in the database</p>
+    {% endif %}
 </body>
 </html>
