@@ -1,5 +1,5 @@
 from django.shortcuts import HttpResponse
 
 
-def index():
+def index(request):
     return HttpResponse("Welcome to my eHomepage!")
