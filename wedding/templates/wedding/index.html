@@ -16,5 +16,33 @@
     {% else %}
         <p>No people are in the database</p>
     {% endif %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+        {% if last_five_people %}
+            <table>
+            <tr>
+                <th>Name</th>
+                <th>Address 1</th>
+            </tr>
+            {% for person in last_five_people %}
+            <tr>
+                <td>{{ person.name }}</td>
+                <td>{{ person.address1 }}</td>
+                <td>{{ person.address2 }}</td>
+                <td>{{ person.city }}</td>
+                <td>{{ person.state }}</td>
+                <td>{{ person.zip_code }}</td>
+                <td>{{ person.email }}</td>
+                <td>{{ person.comment }}</td>
+            </tr>
+            {% endfor %}
+            </table>
+        {% else %}
+            <p>No people are in the database</p>
+        {% endif %}
+        </div>
+    </div>
+</div>
 </body>
 </html>
