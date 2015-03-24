@@ -8,5 +8,5 @@ urlpatterns = patterns('',
 
                        url(r'^admin/', include(admin.site.urls)),
                        url(r'^wedding/', include('wedding.urls')),
-                       url(r'/', include('home.urls')),
+                       url(r'^$', include('home.urls')),
                        )
