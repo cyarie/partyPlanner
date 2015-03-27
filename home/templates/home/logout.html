@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="text-center">You are now logged out!</h1>
+            {% url 'django.contrib.auth.views.login' as login_url %}
+            <h3 class="text-center"><a href="{{ login_url }}">Login</a></h3>
+        </div>
+    </div>
+    </div>
+{% endblock %}

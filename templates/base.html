@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>{% block title %}A Very Merry Homepage{% endblock %}</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
+    {% load staticfiles %}
+    <link href="{% static "bootstrap/dist/css/bootstrap.css" %}" rel="stylesheet" />
+    <link href="{% static "css/main.css" %}" rel="stylesheet" />
+    <script src="{% static "jquery/dist/jquery.js" %}"></script>
+    <script src="{% static "bootstrap/dist/js/bootstrap.js" %}"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">CL-CY Wedding</a>
+        </div>
+        <div class="collapse navbar-collapse" id="home-navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated %}
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ user.username }} <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="{% url 'django.contrib.auth.views.logout' %}">Logout</a></li>
+                  </ul>
+                </li>
+                {% else %}
+                <li><a href="{% url 'django.contrib.auth.views.login' %}">Login</a></li>
+                {% endif %}
+              </ul>
+        </div>
+    </div>
+</nav>
+{% block content %}{% endblock %}
+</body>
+</html>
