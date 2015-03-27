@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>A Very Merry Homepage</title>
-    {% load staticfiles %}
-    <link href="{% static "bootstrap/dist/css/bootstrap.css" %}" rel="stylesheet" />
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}Wedding Stuff{% endblock %}
+
+{% block content %}
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
@@ -16,6 +12,12 @@
             <tr>
                 <th>Name</th>
                 <th>Address 1</th>
+                <th>Address 2</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip Code</th>
+                <th>Email</th>
+                <th>Comments</th>
             </tr>
             </thead>
             <tbody>
@@ -39,5 +41,4 @@
         </div>
     </div>
 </div>
-</body>
-</html>
+{% endblock %}

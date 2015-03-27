@@ -107,4 +107,8 @@ target/
 # Settings file
 cyarieWedding/settings.py
 
+# Migrations
+wedding/migrations
+home/migrations
+
 
