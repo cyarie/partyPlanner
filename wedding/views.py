@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from wedding.models import People
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
+from django.template import RequestContext
+from wedding.forms import PeopleForm
+from django.forms.models import modelformset_factory
 from django.shortcuts import get_object_or_404
 
 
@@ -11,6 +13,22 @@ def index(request):
     context = {"people_added": people_added}
     return render(request, "wedding/index.html", context)
 
+
 @login_required()
-def invite_people(request):
-    return render(request, "wedding/invite.html")
+def invitations(request):
+    context = RequestContext(request)
+
+    if request.method == "POST":
+        form = PeopleForm(request.POST)
+
+        if form.is_valid():
+            person = form.save(commit=False)
+            person.created_by_id = request.user.id
+            person.save()
+            return render(request, "wedding/thanks.html")
+        else:
+            print(form.errors)
+    else:
+        form = PeopleForm()
+
+    return render_to_response('wedding/invite.html', {'form': form}, context)

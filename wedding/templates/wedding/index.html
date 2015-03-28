@@ -2,6 +2,8 @@
 
 {% block title %}Wedding Stuff{% endblock %}
 
+{% block navurl %}{% url 'wedding.views.index' %}{% endblock %}
+
 {% block content %}
 <div class="container">
 <div class="row">
@@ -12,11 +14,32 @@
                     <div class="widget-body">
                         <div class="widget-content pull-left">
                             {% if people_added == 1 %}
-                            <div class="title">You have added {{ people_added }} person to invite</div>
+                            <div class="title">You have added {{ people_added }} person to the RSVP list</div>
                             {% else %}
-                            <div class="title">You have added {{ people_added }} people to invite</div>
+                            <div class="title">You have added {{ people_added }} people to the RSVP list</div>
                             {% endif %}
-                            <div class="comment"><a href="{% url 'wedding.views.invite_people' %}">Invite more people</a></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-xs-12">
+                <div class="widget">
+                    <div class="widget-body">
+                        <div class="widget-content pull-left">
+                            <div class="title"><a href="{% url 'wedding.views.invitations' %}">Invite more people</a></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12">
+                <div class="widget">
+                    <div class="widget-body">
+                        <div class="widget-content pull-left">
+                            <div class="title"><a href="{% url 'wedding.views.invitations' %}">View your invitations</a></div>
                         </div>
                         <div class="clearfix"></div>
                     </div>
