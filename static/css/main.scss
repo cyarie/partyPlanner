@@ -44,7 +44,13 @@ body {
 }
 
 .navbar {
-  margin-bottom: 0px;
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0;
+  }
 }
 
 /** Containers **/
