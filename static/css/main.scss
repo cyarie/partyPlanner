@@ -1,8 +1,8 @@
 /** Variables **/
 $global-border-radius: 2px;
-$bg-color: #ffffff;
-$container-color: #eaeaea;
-$border-color: #5f5f5f;
+$bg-color: #fff;
+$container-color: #eee;
+$border-color: #fff;
 $fourth-color: #CDDAEC;
 $fifth-color: #C2D4EC;
 $box-shadows: 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -17,6 +17,29 @@ body {
   background-color: $bg-color;
 }
 
+/** Login **/
+.login-row {
+  margin-top: 15px;
+}
+
+/** Navbar **/
+.navbar-inverse {
+  background-color: $fifth-color;
+  border-color: $fifth-color;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: black;
+}
+
+.navbar-inverse .navbar-brand {
+  color: black;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
 /** Containers **/
 .login-container {
   position: relative;
@@ -24,15 +47,21 @@ body {
   border-radius: $global-border-radius;
 }
 
+.container {
+  height: 100%;
+  padding-right: 3em;
+  padding-left: 3em;
+  background-color: $container-color;
+}
+
 /*** Widgets ***/
 .widget {
-  background: $container-color;
-  border: 1px solid transparent;
+  background: #fff;
+  border: 1px solid #eee;
   border-radius: 2px;
   -webkit-box-shadow: $box-shadows;
   box-shadow: $box-shadows;
-  border-color: $border-color;
-  margin-top: 15px;
+  margin: 15px;
 }
 .widget .widget-title {
   color: #767676;
