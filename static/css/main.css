@@ -11,6 +11,12 @@ body {
 .login-row {
   margin-top: 15px; }
 
+/** Invitations Table **/
+.table-view {
+  background-color: #fff;
+  margin-top: 15px;
+  padding: 10px 10px 10px 10px; }
+
 /** Navbar **/
 .navbar-inverse {
   background-color: #C2D4EC;
