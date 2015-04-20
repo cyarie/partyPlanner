@@ -61,7 +61,6 @@ __pycache__/
 env/
 build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 lib/
@@ -106,5 +105,9 @@ target/
 
 # Settings file
 cyarieWedding/settings.py
+
+# Migrations
+wedding/migrations
+home/migrations
 
 
