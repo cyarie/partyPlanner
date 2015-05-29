@@ -18,7 +18,6 @@ def rsvp(request):
         if form.is_valid():
             rsvp_obj = form.save(commit=False)
             if int(request.POST["going"]) == 0:
-                print("NOIPE")
                 rsvp_obj.going = False
             elif int(request.POST["going"]) == 1:
                 rsvp_obj.going = True
