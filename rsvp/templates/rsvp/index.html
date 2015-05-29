@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RSVP</title>
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans|Pacifico' rel='stylesheet' type='text/css'>
+    {% load staticfiles %}
+    <link href="{% static "bootstrap/dist/css/bootstrap.css" %}" rel="stylesheet" />
+    <link href="{% static "css/rsvp.css" %}" rel="stylesheet" />
+    <script src="{% static "jquery/dist/jquery.js" %}"></script>
+    <script src="{% static "bootstrap/dist/js/bootstrap.js" %}"></script>
+</head>
+<body>
+<div class="rsvp-form-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-header">
+                    <h1>RSVP Here! <small>So we can figure out how many people are coming</small></h1>
+                </div>
+                <form id="rsvp-form" method="post" action="/rsvp/submit/">{% csrf_token %}
+                    {% for hidden in form.hidden_fields %}
+                      {{ hidden }}
+                    {% endfor %}
+                    <div class="form-group">
+                        <h3><label for="guestName">Name</label></h3>
+                        <input type="text" class="form-control" id="guestName" name="name" placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <h3><label for="guestNumber">Number of Guests</label></h3>
+                        <select class="form-control" id="guestNumber" name="number_guests">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <div class="btn-group-lg" role="group" aria-label="goingGroup" data-toggle="buttons">
+                            <label class="btn btn-default btn-lg">
+                                <input type="radio" name="going" value="1" checked="">Going
+                            </label>
+                            <label class="btn btn-default btn-lg">
+                                <input type="radio" name="going" value="0">Not Going</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-default btn-lg" name="submit" value="RSVP">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
